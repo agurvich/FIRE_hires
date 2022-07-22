@@ -177,15 +177,15 @@ function defineViewerParams(){
 
 		//render texture to show column density
 		this.textureCD = null;
-		this.columnDensity = false;
+		this.columnDensity = true;
 		this.materialCD = null;
 		this.sceneCD = null;
 		this.cameraCD = null;
-		this.scaleCD = 0.1; //scaling factor for the shader so that it adds up to one at highest density
+		this.scaleCD = 0.01; //scaling factor for the shader so that it adds up to one at highest density
 
-		this.CDmin = 1;
-		this.CDmax = 10;
-		this.CDlognorm = 0;
+		this.CDmin = 0;
+		this.CDmax = 2;
+		this.CDlognorm = 1;
 		this.CDckey = 'ColumnDensity' // the name of the ckey, shows up in the colorbar label
 		this.CDkey = '__column__density__foo__abg' // the name of the pseudo particle group, salted so that no one overwrites it
 

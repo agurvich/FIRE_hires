@@ -893,7 +893,7 @@ function applyOptions(){
 	//  do it here so it happens in the presets too and load settings, etc...
 	viewerParams.showParts[viewerParams.CDkey] = viewerParams.partsKeys.some(
 		function (key){return viewerParams.showParts[key]});
-	viewerParams.colormap[viewerParams.CDkey] = 4/256
+	viewerParams.colormap[viewerParams.CDkey] = 0.109375;//4/256
 	viewerParams.ckeys[viewerParams.CDkey] = [viewerParams.CDckey]
 	viewerParams.colormapLims[viewerParams.CDkey] = {}
 	viewerParams.colormapLims[viewerParams.CDkey][viewerParams.ckeys[viewerParams.CDkey][0]] = [viewerParams.CDmin,viewerParams.CDmax]
