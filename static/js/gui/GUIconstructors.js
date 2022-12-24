@@ -106,7 +106,7 @@ function createDecimationSegment(container,parent,name){
 			.attr('class','pLabelDiv')
 			.style('width','135px')
 			.style('display','inline-block')
-			.text('Memory Limit (Gb)');
+			.text('Memory Limit (GB)');
 		mem.append('div')
 			.attr('class','NSliderClass')
 			.attr('id','MSlider')
@@ -134,6 +134,7 @@ function createPresetSegment(container,parent,name){
 		.attr('id','savePresetButton')
 		.attr('class','button')
 		.style('width',(GUIParams.containerWidth - 10) + 'px')
+		.style('margin-left','0px') // TODO: padding is being double counted in main/general/data pane. RIP
 		.on('click',function(){
 			sendToViewer([{'savePreset':null}]);
 		})
@@ -149,6 +150,7 @@ function createResetSegment(container,parent,name){
 		.attr('id','resetButton')
 		.attr('class','button')
 		.style('width',(GUIParams.containerWidth - 10)/2. - 3 + 'px')
+		.style('margin-left','0px') // TODO: padding is being double counted in main/general/data pane. RIP
 		.on('click',function(){
 			sendToViewer([{'resetToOptions':null}]);
 		})
@@ -1240,6 +1242,7 @@ function createParticleColormapSelectorSegment(container,parent,name,p){
 		.attr('class','selectCMap')
 		.attr('id',p+'_SelectCMap')
 		.style('margin-left','4px')
+		.style('width','75px')
 		.on('change', selectColormap)
 
 	var options = selectCMap.selectAll('option')

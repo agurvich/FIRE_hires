@@ -491,7 +491,6 @@ function applyOptions(){
 		"cameraUp", // values copied into a named array below
 		"quaternion", // not used for input, only output as a preset
 		"useStereo", // changes the renderer and needs to update an element in the gui
-		"title", // handled in WebGLStart
 		// TODO: do we actually need to do this?
 		//  GUI creation initializes correctly from the values in GUIParams
 		//  can't we just send the values and then make a call to build the GUI?
@@ -785,6 +784,13 @@ function initControls(updateGUI = true,force_fly=false){
 	if (viewerParams.haveUI){
 		var evalString = 'elm = document.getElementById("CenterCheckBox"); elm.checked = '+viewerParams.useTrackball+'; elm.value = '+viewerParams.useTrackball+';'
 		forGUI.push({'evalCommand':evalString});
+	}
+
+	// the fly explainer
+	if (viewerParams.controlsExplainerDelay_sec>0){
+		showFlyExplainer();
+	} else {
+		removeFlyExplainer();
 	}
 
 	viewerParams.switchControls = false;
